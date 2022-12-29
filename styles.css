@@ -1,163 +1,199 @@
 body {
     margin: 0;
     font-family: sans-serif;
-  }
-  
-  header {
+}  
+
+header {
     background-color: #333;
     color: white;
     padding: 20px;
-  }
+}
   
-  header .container {
+header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+}
   
-  header h1 {
+header h1 {
     font-size: 30px;
     margin: 0;
-  }
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
   
-  header nav ul {
+header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-  }
+    flex-direction: row;
+}
   
-  header nav li {
-    margin: 0 10px;
-  }
+header nav li {
+    margin: 10px 10px;
+}
   
-  header nav a {
+header nav a {
     color: white;
-    text-decoration: none;
-  }
+    text-decoration: none;    
+    margin: 10px;
+}
+
+header nav ul.show {
+    display: flex;
+    flex-direction: column;
+}
   
-  .hero {
+header nav li {
+    margin: 10px 0;
+}
+  
+.hero {
     background-color: #f2f2f2;
     text-align: center;
     padding: 100px 20px;
-  }
-  
-  .hero h2 {
+}
+
+.hero h2 {
     font-size: 40px;
     margin-bottom: 20px;
-  }
-  
-  .hero button {
+}
+
+.hero button {
     background-color: #333;
     border: none;
     color: white;
     padding: 15px 30px;
     font-size: 16px;
     cursor: pointer;
-  }
-  
-  .services {
-    background-color: #f2f2f2;
-    padding: 100px 20px;
-  }
-
-  .services h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .services .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .services .service {
-    width: 30%;
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .services .service svg {
-    width: 80px;
-    margin-bottom: 20px;
-  }
-  
-  .services .service h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .testimonials {
-    background-color: #333;
-    color: white;
-    padding: 100px 20px;
-  }
-
-  .testimonials h2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .testimonials .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .testimonials .testimonial {
-    width: 30%;
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .testimonials .testimonial img {
-    width: 80px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
-  
-  .testimonials .testimonial strong {
-    display: block;
-    margin-top: 20px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Responsive styles */
-  
-  @media (max-width: 992px) {
-  .services .service {
-    width: 45%;
-  }
-  .testimonials .testimonial {
-    width: 45%;
-  }
 }
 
+.services {
+    background-color: #f2f2f2;
+    padding: 100px 20px;
+}
+
+.services h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.services .service {
+    /* width: 30%;
+    text-align: center;
+    margin-bottom: 50px; */
+    text-align: center;
+}
+
+.services .service svg {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.services .service h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.testimonials {
+    background-color: #333;
+    color: white;
+    padding: 100px 20px;
+}
+
+.testimonials h2{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.testimonials .container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.testimonials .testimonial {
+width: 30%;
+text-align: center;
+margin-bottom: 50px;
+}
+
+.testimonials .testimonial img {
+width: 80px;
+border-radius: 50%;
+margin-bottom: 20px;
+}
+
+.testimonials .testimonial strong {
+display: block;
+margin-top: 20px;
+}
+
+footer {
+background-color: #333;
+color: white;
+padding: 20px;
+text-align: center;
+}
+
+/* Responsive styles */
+
 @media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
-  }
-  header nav li {
-    margin: 10px 0;
-  }
-  .services {
-    display: block;
-  }
-  .services .service {
-    width: 50%;
-  }
-  .testimonials .testimonial {
-    width: 100%;
-  }
+    header nav {
+        width: 100%;
+        height: 100%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul {
+        display: none;
+    }
+    header nav .menu-btn {
+        display: block;
+        background-color: #333;
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    header nav .menu-btn:focus {
+        outline: none;
+    }
+    header nav li {
+        margin: 10px 0;
+    }
+    .services {
+        display: block;
+    }
+
+    .services .container {
+        grid-template-columns: (repeat(auto-fit, minmax(250px, )1fr));
+        grid-gap: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+    .services .service {
+        width: 100%;
+    }
+    .testimonials .testimonial {
+        width: 100%;
+    }
 }
